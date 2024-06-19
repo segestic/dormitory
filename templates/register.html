@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 mx-auto">
+              <div class="card">
+                <div class="card-header text-black">
+                  <h2>Dormitory Registration</h2>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                       <div class="col-lg-6">
+                        <a type="button" class="btn btn-block" href="{% url 'student_register' %}">I am a Student</a>
+                       </div>
+                       <div class="col-lg-6">
+                        <a type="button" class="btn btn-block" href="{% url 'warden_register' %}">I am a Warden</a>
+                       </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+            <center><p style="color:red;"> Click the above link to Login if you already have an account</p></center>
+        </div>
+      </section>
+  
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Welcome Warden {{user.username}}</h1>
+<div class="wrap">
+    <form action="" method="post">
+        {% csrf_token %}
+      <div class="fields">{{ form.as_p }}</div>
+      <input class="button-custom" type="submit" value="REMOVE DUE">
+    </form>
+  </div>
+{% endblock content %}

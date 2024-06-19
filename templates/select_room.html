@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="wrap">
+    {% if not user.student.room %}
+<div class="alert alert-danger" role="alert">
+ <h4> Make Sure You Update your Profile before selecting a Room!</h4>
+    <h5 >Room Categories:</h5>
+    <p class = "text-danger">S = Single Occupancy</p>
+    <p class = "text-danger">D = Double Occupancy </p>
+    <p class = "text-danger">B = Both Single and Double Occupancy</p>
+    <p class = "text-danger">P = Reserved for Research Scholars</p>
+</div>
+{% endif %}
+    <form action="" method="post">
+        {% csrf_token %}
+         {{form|crispy}}
+    <br>
+      <input class="btn btn-primary" type="submit" value="UPDATE">
+    </form>
+  </div>
+  
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+{% endblock content %}
+
+
+{% block scripts %}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script>
+  $(document).ready(function() {
+    $('#id_room').select2({
+      dropdownAutoWidth : true,
+      allowClear: true,
+      placeholder: "Please select a room",
+
+    });
+});
+</script>
+{% endblock %}
+

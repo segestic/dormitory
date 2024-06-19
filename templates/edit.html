@@ -1,0 +1,32 @@
+
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="wrap">
+
+<h4>Welcome {{user.first_name}} {{user.last_name}} with Username: {{user.username}}</h4>
+    <br>
+{% if not user.student.room %}
+<div class="alert alert-danger" role="alert">
+ <h4> Make Sure You Update your Profile before selecting a Room!</h4>
+</div>
+{% else %}
+<div class="alert alert-success" role="alert">
+    <h4> Congratulations You have already selected room {{user.student.room}}. </h4>
+</div>
+{% endif %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+      {{form|crispy}}
+<!--      <div class="fields"> Student Name <br><br> {{ form.first_name }}</div>-->
+<!--      <div class="fields"> Father's Name <br><br> {{ form.last_name }}</div>-->
+<!--      <div class="fields"> Enrollment Number <br><br> {{ form.enrollment_no }}</div>-->
+<!--      <div class="fields"> Course {{ form.course }}</div>-->
+<!--      <div class="fields"> Date of birth (yyyy-mm-dd) <br><br> {{ form.dob }}</div>-->
+<!--      <div class="fields"> Gender {{ form.gender }}</div>-->
+<!--      <input class="button-custom" type="submit" value="DONE">-->
+    <input type="submit" value="Done" class="btn btn-block btn-primary">
+    </form>
+  </div>
+{% endblock content %}

@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="display_table">
+
+<!--    Student First Name: {{ student.user.first_name }}-->
+    <br><br>
+ 	<table class="table table-striped">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_table }}
+    <input class="button-custom" type="submit" value="DONE">
+    </form>
+
+    </table>
+<!--<input class="button-custom" type="submit" value="DONE">-->
+</div>
+{% endblock content %}

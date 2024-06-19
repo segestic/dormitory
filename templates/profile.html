@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!--<h4>Welcome </h4>-->
+
+<br>
+{% if not user.student.room %}
+<div class="alert alert-danger" role="alert">
+ <h4> Make Sure You Update your Profile before selecting a Room!</h4>
+</div>
+{% else %}
+<div class="alert alert-success" role="alert">
+ <h4> Congratulations You have already selected room {{user.student.room}}. </h4>
+</div>
+{% endif %}
+
+
+<div class="card">
+  <div class="card-header">
+    <h3>Profile</h3>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ student.user.username}}</h5>
+<table class="table table-striped">
+        <tr>
+        <td class="table-info">First Name</td>
+        <td>{{ student.user.first_name }}</td>
+        </tr>
+        <tr>
+        <td class="table-info">Last Name</td>
+        <td>{{ student.user.last_name }}</td>
+        </tr>
+        <tr>
+        <td class="table-info">Enrollment Number</td>
+        <td>{{ student.enrollment_no }}</td>
+        </tr>
+        <tr>
+        <td class="table-info">Date of birth (yyyy-mm-dd)</td>
+        <td>{{ student.dob }}</td>
+        </tr>
+        <tr>
+        <td class="table-info">Gender</td>
+        <td>{{ student.gender }}</td>
+        </tr>
+        <tr>
+        <td class="table-info">Room</td>
+        <td>{% if student.room_allotted %} {{ student.room }} in {{ student.room.hostel }} {% else %} Not Allotted {% endif %}
+        </td>
+        </tr>
+        <tr>
+        <td class="table-info">Dues</td>
+        <td>{% if student.no_dues %} color: green No Dues {% else %}  color: red Unpaid Dues {% endif %} </td>
+        </tr>
+        <tr>
+        <td><a href="{% url 'edit' %}" class="btn btn-primary">Update Profile</a></td>
+        <td> </td>
+        </tr>
+        <tr>
+            <td> <a href="{% url 'select' %}" class="btn btn-primary">Select Room </a></td>
+        <td> </td>
+        </tr>
+
+    </table>
+
+<!--    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
+
+  </div>
+</div>
+
+
+
+{% endblock content %}

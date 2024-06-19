@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!--<h4 class = "text-uppercase"> {{ hostel.name }} ROOM LIST </h4>-->
+
+<div class="display_table">
+ 	<table class="table table-striped">
+		<thead class="table-danger">
+          <tr>
+            <th>COUNT</th>
+            <th>ROOM NO</th>
+            <th>ROOM ID</th>
+            <th>ROOM TYPE</th>
+            <th>DORMITORY</th>
+            <th>STATUS</th>
+          </tr>
+        </thead>
+      {% for room in rooms %}
+          <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{ room.no }}</td>
+            <td>{{ room.name }}</td>
+            <td> {{ room.room_type }}</td>
+            <td> {{ hostel.name }}</td>
+            <td style="{% if not room.vacant %} color: red {% else %} color: green {% endif %}"> {% if room.vacant %} vacant {% else %} occupied {% endif %} </td>
+          </tr>
+      {% endfor %}
+    </table>
+</div>
+
+
+
+{% endblock content %}

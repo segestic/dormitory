@@ -1,0 +1,38 @@
+<h1>Welcome Warden {{user.username}}</h1>
+
+
+{% if user.is_student %}
+<a href="{% url 'logout' %}">Logout</a> <br>
+<br>
+<a href="{% url 'edit' %}"> Update Details</a>
+<br>
+<a href="{% url 'select' %}"> Select a Room</a>
+<br>
+{% else %}
+<a href="{% url 'register' %}">Register</a> <br>
+<br>
+<a href="{% url 'login' %}">Login</a>
+<br>
+<br>
+<br>
+{% endif %}
+
+
+{% if user.is_warden %}
+<a href="{% url 'logout' %}">Logout</a> <br>
+<br>
+<a href="{% url 'warden_dues' %}"> Dues </a>
+<br>
+<a href="{% url 'warden_add_due' %}"> Add Due </a>
+<br>
+<a href="{% url 'warden_remove_due' %}">  Remove Due </a>
+<br>
+<a href="{% url 'login' %}"> List Rooms </a>
+<br>
+<a href="{% url 'warden_student_list' %}"> List Students </a>
+<br>
+{% else %}
+<a href="{% url 'register' %}">Register</a> <br>
+<br>
+<a href="{% url 'login' %}">Login</a>
+{% endif %}

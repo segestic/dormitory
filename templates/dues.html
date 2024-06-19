@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <div class="wrapper">
+<h4> LIST OF STUDENTS WITH DUES </h4>
+        {% for student in students %}
+            {% if not student.no_dues %}
+                <div class="table">
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            First Name
+                        </div>
+                        <div class="col-sm-4">
+                            {{ student.user.first_name }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            Last Name
+                        </div>
+                        <div class="col-sm-4">
+                            {{ student.user.last_name }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            Enrollment Number
+                        </div>
+                        <div class="col-sm-4">
+                            {{ student.enrollment_no }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            Date of birth (yyyy-mm-dd)
+                        </div>
+                        <div class="col-sm-4">
+                            {{ student.dob }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            Gender
+                        </div>
+                        <div class="col-sm-4">
+                            {{ student.gender }}
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+
+        <a class="button-custom" href="{% url 'warden_add_due' %}">
+        Add a due
+        </a>
+    </div>
+{% endblock content %}
