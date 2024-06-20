@@ -11,7 +11,7 @@
 
 ### 1. Clone the project repository to your local machine.
     
-    git clone ...
+    git clone [...](https://github.com/segestic/dormitory.git)
     
 
 ### 2. Navigate to the project directory.
@@ -33,7 +33,7 @@
 
 ### Clone the project repository to your local machine.
     
-    git clone ....
+    git clone [....](https://github.com/segestic/dormitory.git)
     
 
 ### Navigate to the project directory.
