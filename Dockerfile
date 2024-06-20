@@ -21,6 +21,7 @@ RUN set -ex && \
 # Copy local project
 COPY . /code/
 
+
 # Expose port 8000
 EXPOSE 8000
 
