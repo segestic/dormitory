@@ -7,21 +7,22 @@
 - Docker (if using Docker)
 - Basic knowledge of Django
 
-## Setup with Docker
+## Setup with Docker (OPTION 1)
 
 ### 1. Clone the project repository to your local machine.
     
-    git clone [...](https://github.com/segestic/dormitory.git)
+    git clone https://github.com/segestic/dormitory.git
     
 
 ### 2. Navigate to the project directory.
     
     cd dormitory
     
-
 ### 3. Create a `.env` file in the project directory by renaming the .env.example and fill in your variables
 
+
 ### 4. Open a terminal or command prompt and navigate to the project directory. 
+
 
 ### 5. Run the following command to start the Docker containers:
 
@@ -29,11 +30,14 @@
 
 ### 6. Django will be accessible at http://localhost:8000.
 
-## Setup with Virtual Environment
+
+
+
+## Setup with Virtual Environment (OPTION 2)
 
 ### Clone the project repository to your local machine.
     
-    git clone [....](https://github.com/segestic/dormitory.git)
+    git clone https://github.com/segestic/dormitory.git
     
 
 ### Navigate to the project directory.
@@ -42,7 +46,7 @@
     
 ### Create a virtual environment by running the following command:
     
-    python3 -m venv venv
+    python3 -m venv env
     
     
 ### Activate the virtual environment:
@@ -65,13 +69,7 @@
     
     python manage.py migrate
     
-
-
-## Apply the database migrations by running the following command:
     
-    python manage.py migrate
-    
-
 
 ## Collect static files
     
