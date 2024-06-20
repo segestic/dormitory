@@ -28,7 +28,7 @@
 
     docker-compose up
 
-### 6. Django will be accessible at http://localhost:8000.
+### 6. Django will be accessible at http://localhost:7070.
 
 
 
