@@ -28,7 +28,7 @@ services:
       - POSTGRES_PASSWORD=${PGPASSWORD}
       - POSTGRES_HOST=${PGHOST}
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${PGUSER}"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
       interval: 10s
       timeout: 5s
       retries: 5
