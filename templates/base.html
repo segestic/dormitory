@@ -80,7 +80,6 @@
             {% if request.user.is_authenticated and request.user.is_student %}
             <li><a class="nav-link scrollto"  href="{% url 'edit' %}">Update Details</a> </li>
             <li><a class="nav-link scrollto" href="{% url 'select' %}">Select a Room</a> </li>
-            <li><a class="nav-link scrollto" href="{% url 'logout' %}">Logout</a> </li>
             {% endif %}
 
             {% if request.user.is_authenticated and request.user.is_warden %}
@@ -89,7 +88,6 @@
             <li><a class="nav-link scrollto"  href="{% url 'warden_add_due' %}">Add Due</a> </li>
             <li><a class="nav-link scrollto" href="{% url 'warden_remove_due' %}">Remove Due</a> </li>
             <li><a class="nav-link scrollto"  href="{% url 'warden_student_list' %}">List Students</a> </li>
-            <li><a class="nav-link scrollto"  href="{% url 'logout' %}">Logout</a> </li>
             {% endif %}
             {% if request.user.is_authenticated %}
             <li><a href="{% url 'logout' %}"><button class="btn btn-success"><i class="fa fa-user"></i> {{ user }} | Logout </button></a></li>
@@ -129,6 +127,17 @@
 
 
   <main class="container">
+  <style>
+	#footer {
+	  position: fixed;
+	  bottom: 0;
+	  width: 100%;
+	}
+	#footer .footer-top {
+       padding: 0px 0 0px 0;
+       background: #000;
+}
+</style>
     {% block content %}
     {% endblock content %}
 
@@ -172,7 +181,26 @@
 
   <!-- Template Main JS File -->
   <script src="{% static 'landing/assets/js/main.js' %}"></script>
+    <!-- Hide footer on scroll-->
+  <script>
+  window.addEventListener('scroll', function() {
 
+  var footer = document.getElementById('footer');
+
+  var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+  if ((scrollPosition + window.innerHeight) >= document.documentElement.scrollHeight) {
+
+    footer.style.display = 'none';
+
+  } else {
+
+    footer.style.display = 'block';
+
+  }
+
+});
+  </script>
         {% block scripts %}
         {% endblock %}
 

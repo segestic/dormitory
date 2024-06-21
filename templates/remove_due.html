@@ -1,12 +1,22 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
+
+
+<div class="wrap mt-5 text-center">
+
 <h1>Welcome Warden {{user.username}}</h1>
-<div class="wrap">
+  </div>
+  <div class="col col-8 offset-2 mt-3">
     <form action="" method="post">
         {% csrf_token %}
-      <div class="fields">{{ form.as_p }}</div>
-      <input class="button-custom" type="submit" value="REMOVE DUE">
+      <div class="fields">{{ form|crispy }}</div>
+
+      <div class="mt-3">
+      <input class="btn btn-block btn-danger" type="submit" value="REMOVE DUE">
+     </div>    
     </form>
+    </div>    
   </div>
 {% endblock content %}

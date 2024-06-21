@@ -2,9 +2,9 @@
 
 {% block content %}
 
-
-    <div class="wrapper">
+<div class="wrap mt-5 text-center">
 <h4> LIST OF STUDENTS WITH DUES </h4>
+    </div>
         {% for student in students %}
             {% if not student.no_dues %}
                 <div class="table">
@@ -52,9 +52,9 @@
                 </div>
             {% endif %}
         {% endfor %}
-
+    <div class="wrap mt-3 text-center">
         <a class="button-custom" href="{% url 'warden_add_due' %}">
         Add a due
         </a>
-    </div>
+</div>
 {% endblock content %}

@@ -3,12 +3,12 @@
 {% load crispy_forms_tags %}
 {% block content %}
 <div class="wrap">
-
+<div class="col col-8 offset-2 mt-5">
 <h4>Welcome {{user.first_name}} {{user.last_name}} with Username: {{user.username}}</h4>
     <br>
 {% if not user.student.room %}
 <div class="alert alert-danger" role="alert">
- <h4> Make Sure You Update your Profile before selecting a Room!</h4>
+ <h4> Makess Sure You Update your Profile before selecting a Room!</h4>
 </div>
 {% else %}
 <div class="alert alert-success" role="alert">
@@ -26,7 +26,9 @@
 <!--      <div class="fields"> Date of birth (yyyy-mm-dd) <br><br> {{ form.dob }}</div>-->
 <!--      <div class="fields"> Gender {{ form.gender }}</div>-->
 <!--      <input class="button-custom" type="submit" value="DONE">-->
+    <br>
     <input type="submit" value="Done" class="btn btn-block btn-primary">
     </form>
+    <div>
   </div>
 {% endblock content %}

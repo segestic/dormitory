@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
+
 <div class="wrap">
+  <div class="col col-8 offset-2 mt-5">
     <form action="" method="post">
         {% csrf_token %}
-      <div class="fields">{{ form.as_p }}</div>
-      <input class="button-custom" type="submit" value="ADD DUE">
+      <div class="fields">{{ form|crispy }}</div>
+      <br>
+      <input class="btn btn-block btn-danger" type="submit" value="ADD DUE">
     </form>
+    </div>
   </div>
 {% endblock content %}

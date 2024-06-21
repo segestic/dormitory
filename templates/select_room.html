@@ -3,6 +3,7 @@
 
 {% block content %}
 <div class="wrap">
+<div class="col col-8 offset-2 mt-5">
     {% if not user.student.room %}
 <div class="alert alert-danger" role="alert">
  <h4> Make Sure You Update your Profile before selecting a Room!</h4>
@@ -20,7 +21,7 @@
       <input class="btn btn-primary" type="submit" value="UPDATE">
     </form>
   </div>
-  
+</div>  
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 {% endblock content %}
 
