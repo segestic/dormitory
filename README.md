@@ -25,14 +25,11 @@ https://github.com/segestic/dormitory/assets/50618702/698f67ae-0b07-4eab-a3af-ce
 ### 3. Create a `.env` file in the project directory by renaming the .env.example and fill in your variables
 
 
-### 4. Open a terminal or command prompt and navigate to the project directory. 
-
-
-### 5. Run the following command to start the Docker containers:
+### 4. Run the following command to start the Docker containers:
 
     docker-compose up
 
-### 6. Django will be accessible at http://localhost:7070.
+### 5. Django will be accessible at http://localhost:7070.
 
 
 
