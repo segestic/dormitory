@@ -1,5 +1,9 @@
 ## Hostel Managment System
 
+
+https://github.com/segestic/dormitory/assets/50618702/698f67ae-0b07-4eab-a3af-ce5b8029ca53
+
+
 # Dormitory Management System - Django Setup Guide
 
 ## Prerequisites
